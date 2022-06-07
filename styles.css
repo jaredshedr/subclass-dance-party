@@ -3,7 +3,9 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url("./img/background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -30,7 +32,6 @@ body, a:link, a:visited, a:active{
   height: 70px;
 }
 .moving-dancer{
-  border:10px solid white;
-  border-radius:9px;
   position:absolute;
+  height: 70px;
 }

@@ -1,6 +1,6 @@
 var makeMovingDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="moving-dancer"></span>');
+  this.$node = $('<img class="moving-dancer" src="img/catwoman.png" alt="a catwoman image">');
   this.setPosition(top, left);
 };
 
@@ -14,12 +14,12 @@ makeMovingDancer.prototype.step = function() {
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   this.$node.animate({
-    opacity: 0.25,
-    left: "+=50",
+    opacity: "toggle",
+    left: "toggle",
     height: "toggle"
-  }, 5000, function() {
+  }, 500, function() {
     // Animation complete.
-    console.log("Animated!")
+    console.log("Animated!");
   });
 };
 

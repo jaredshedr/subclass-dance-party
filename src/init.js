@@ -28,7 +28,23 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
+
+  });
+
+  $('.line-up').on('click', function(event) {
+    var topPosition = 100;
+    window.dancers.forEach(function (dancer) {
+
+      var styleSettings = {
+        top: topPosition,
+        left: 20
+      };
+      dancer.$node.css(styleSettings);
+      topPosition += 100;
+    });
   });
 });
 
