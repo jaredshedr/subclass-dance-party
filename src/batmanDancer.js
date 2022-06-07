@@ -15,9 +15,8 @@ makeBatmanDancer.prototype.step = function() {
   // other effects you can use on a jQuery-wrapped html tag.
 
   $('.bat-man').on( "mouseover", function() {
-
-    $(this).animate({top: Math.random() * 1000, left: Math.random() * 1000}, 500,
-      function () { this.setPosition(top, left); });
+    $(this).animate({top: Math.random() * 1000, left: Math.random() * 1000}, 50,
+      function () { makeBatmanDancer.prototype.setPosition.bind(this, this.top, this.left); });
   });
 
   this.$node.toggle();

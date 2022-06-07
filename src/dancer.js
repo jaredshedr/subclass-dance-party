@@ -15,6 +15,24 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function() {
+
+  var collisionDetect = function () {
+    for (var dancer of window.dancers) {
+      if (!(this === dancer)) {
+        var dy = this.top - dancer.top;
+        var dx = this.left - dancer.left;
+        var distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 200) {
+          $(this.$node).css('transform', 'rotate(180deg)');
+        }
+      }
+    }
+  };
+
+  window.dancers.forEach(function (dancer) {
+    collisionDetect.call(dancer);
+  });
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
@@ -30,3 +48,4 @@ makeDancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+

@@ -17,19 +17,5 @@ makeMovingDancer.prototype.step = function() {
     opacity: "toggle",
     left: "toggle",
     height: "toggle"
-  }, 500, function() {
-    // Animation complete.
-    console.log("Animated!");
-  });
+  }, 500);
 };
-
-/*
-makeMovingDancer.prototype.move = function() {
-  $(this).css({
-    width: function( index, value ) {
-      return parseFloat( value ) * 1.2;
-    },
-  });
-*/
-
-  // this.$node.css(styleSettings);
