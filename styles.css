@@ -25,3 +25,12 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.bat-man{
+  position:absolute;
+  height: 70px;
+}
+.moving-dancer{
+  border:10px solid white;
+  border-radius:9px;
+  position:absolute;
+}
