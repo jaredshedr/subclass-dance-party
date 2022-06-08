@@ -30,9 +30,11 @@ makeDancer.prototype.step = function() {
     }
   };
 
-  window.dancers.forEach(function (dancer) {
-    collisionDetect.call(dancer);
-  });
+  if (window.dancers !== undefined) {
+    window.dancers.forEach(function (dancer) {
+      collisionDetect.call(dancer);
+    });
+  }
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
